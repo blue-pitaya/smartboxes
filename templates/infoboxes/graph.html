@@ -1,0 +1,31 @@
+{% extends 'infoboxes/base.html' %}
+{% load static %}
+
+{% block content %}
+    <canvas id="graph-canvas" width="700px" height="500px"></canvas>
+
+    <div id="graph-controller">
+        <table>
+            <tr>
+                <td></td>
+                <td><button onclick="moveScreen('up');">UP</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button onclick="moveScreen('left');">LEFT</button> </td>
+                <td></td>
+                <td><button onclick="moveScreen('right');">RIGHT</button> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="moveScreen('down');">DOWN</button> </td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div id="info"></div>
+    </div>
+
+
+
+{% endblock %}

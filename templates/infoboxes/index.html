@@ -1,0 +1,29 @@
+{% extends 'infoboxes/base.html' %}
+
+{% block content %}
+
+    <div>
+        {% if boxes_list %}
+            {% for box in boxes_list %}
+                <div class="box">
+                    <h3>{{ box.title }}</h3>
+
+                    <div>{{ box.text }}</div>
+
+                    <div class="box-tags">
+                        {% for tag in box.tag_set.all %}
+                            <div class="tag">{{ tag.title }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="box-time">
+                        <i>{{ box.date_of_creation }}</i>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Brak pudełek.</p>
+        {% endif %}
+    </div>
+
+{% endblock content %}
